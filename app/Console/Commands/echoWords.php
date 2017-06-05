@@ -11,7 +11,7 @@ class echoWords extends Command
      *
      * @var string
      */
-    protected $signature = 'words:echo {string}';
+    protected $signature = 'echoWords {string}';
 
     /**
      * The console command description.
@@ -38,6 +38,6 @@ class echoWords extends Command
     public function handle()
     {
         //
-	    $this->line('Display this on the screen');
+	    $this->line($this->argument('string'));
     }
 }

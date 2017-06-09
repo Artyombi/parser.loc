@@ -17,8 +17,15 @@
     	require '../../vendor/autoload.php';
 
     	$myClient = new GuzzleHttp\Client([
+          'headers' => ['User-Agent'=>'MyReader']
+        ]);
 
-        ])
+    	$feed_response = $myClient->request('GET', $_REQUEST['feed_url']);
+    	if ($feed_response->getStatusCode() == 200) {
+    		$body = $feed_response->getBody();
+    		$html = new \SimpleHtmlDom\SimpleHtmlDom($body);
+            echo $body;
+        }
     }
   ?>
 </body>

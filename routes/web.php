@@ -24,3 +24,7 @@ Route::get('/page', function () {
 	
 	echo '</pre>';
 });
+
+Route::get('/parser', function () {
+	return view('parser');
+});

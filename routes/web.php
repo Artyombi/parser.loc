@@ -25,6 +25,5 @@ Route::get('/page', function () {
 	echo '</pre>';
 });
 
-Route::get('/parser', function () {
-	return view('parser');
-});
+Route::get('/parser', 'ParserController@index')->name('parser');
+Route::post('/parser/submit', 'ParserController@index')->name('submit-parser');
